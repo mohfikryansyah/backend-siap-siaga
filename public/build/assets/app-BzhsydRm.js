@@ -1,0 +1,2 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/welcome-VHnyAzo3.js","assets/dist-1GOSGFzn.js"])))=>i.map(i=>d[i]);
+import{i as e,n as t}from"./dist-1GOSGFzn.js";var n=`Laravel`;t({resolve:async(t,n)=>{let r=Object.assign({"./pages/welcome.tsx":()=>e(()=>import(`./welcome-VHnyAzo3.js`),__vite__mapDeps([0,1]))}),i=await(r[`./pages/${t}.tsx`]||r[`./pages/${t}.jsx`]||r[`./Pages/${t}.tsx`]||r[`./Pages/${t}.jsx`])?.();if(!i)throw Error(`Page not found: ${t}`);return i.default??i},title:e=>e?`${e} - ${n}`:n,progress:{color:`#4B5563`}});

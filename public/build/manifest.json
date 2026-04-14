@@ -1,0 +1,36 @@
+{
+  "_dist-1GOSGFzn.js": {
+    "file": "assets/dist-1GOSGFzn.js",
+    "name": "dist"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-B8dOxA31.css",
+    "name": "app",
+    "names": [
+      "app.css"
+    ],
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/app.tsx": {
+    "file": "assets/app-BzhsydRm.js",
+    "name": "app",
+    "src": "resources/js/app.tsx",
+    "isEntry": true,
+    "imports": [
+      "_dist-1GOSGFzn.js"
+    ],
+    "dynamicImports": [
+      "resources/js/pages/welcome.tsx"
+    ]
+  },
+  "resources/js/pages/welcome.tsx": {
+    "file": "assets/welcome-VHnyAzo3.js",
+    "name": "welcome",
+    "src": "resources/js/pages/welcome.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_dist-1GOSGFzn.js"
+    ]
+  }
+}
