@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\Auth\AuthController;
+use App\Http\Controllers\Api\ProgressMateri\ProgressMateriController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')->group(function () {
@@ -18,6 +19,10 @@ Route::prefix('v1')->group(function () {
             Route::get('/me', [AuthController::class, 'me']);
             Route::post('/logout', [AuthController::class, 'logout']);
             Route::post('/logout-all', [AuthController::class, 'logoutAll']);
+        });
+        Route::prefix('materi')->group(function () {
+            Route::get('/progress', [ProgressMateriController::class, 'index']);
+            Route::post('/progress', [ProgressMateriController::class, 'complete']);
         });
     });
 });
