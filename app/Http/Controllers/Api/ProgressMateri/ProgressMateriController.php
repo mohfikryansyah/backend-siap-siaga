@@ -20,7 +20,7 @@ class ProgressMateriController extends Controller
         $progress = ProgressMateri::where('user_id', $request->user()->id)
             ->get(['materi_id', 'is_completed']);
 
-        return $this->success(['data' => $progress], 'Berhasil ambil data progress');
+        return $this->success(['progress_materi' => $progress], 'Berhasil ambil data progress');
     }
 
     public function complete(Request $request)
