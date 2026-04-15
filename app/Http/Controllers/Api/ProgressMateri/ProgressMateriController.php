@@ -32,9 +32,9 @@ class ProgressMateriController extends Controller
         $progress = ProgressMateri::updateOrCreate(
             [
                 'user_id'   => $request->user()->id,
+                'materi_id' => $request->materi_id,
             ],
             [
-                'materi_id'    => $request->materi_id,
                 'is_completed' => true,
             ]
         );
