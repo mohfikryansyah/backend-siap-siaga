@@ -40,7 +40,7 @@ class KeluargaController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'user_id' => 'required|exists:user,id',
+            'user_id' => 'required|exists:users,id',
             'nama_lengkap' => 'required|string|max:255',
             'usia' => 'required|string',
             'pekerjaan' => 'required|string',
