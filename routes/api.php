@@ -27,7 +27,7 @@ Route::prefix('v1')->group(function () {
             Route::post('/progress', [ProgressMateriController::class, 'complete']);
         });
 
-        // Route::apiResource('keluarga', KeluargaController::class);
-        Route::post('keluarga', [KeluargaController::class, 'store']);
+        Route::apiResource('keluarga', KeluargaController::class);
+        // Route::post('keluarga', [KeluargaController::class, 'store']);
     });
 });

@@ -80,7 +80,7 @@ class KeluargaController extends Controller
         $keluarga = Keluarga::findOrFail($id);
         $keluarga->delete();
 
-        return response()->json([
+        return $this->success([
             'message' => 'Data keluarga berhasil dihapus'
         ]);
     }
