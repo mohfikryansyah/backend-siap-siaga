@@ -18,7 +18,7 @@ class KeluargaController extends Controller
         $keluargas = Keluarga::latest()->get();
 
         return $this->success([
-            'data' => $keluargas
+            'keluarga' => $keluargas
         ], 'Berhasil ambil data keluarga');
     }
 
@@ -30,7 +30,7 @@ class KeluargaController extends Controller
         $keluarga = Keluarga::findOrFail($id);
 
         return $this->success([
-            'data' => $keluarga
+            'keluarga' => $keluarga
         ]);
     }
 
@@ -49,7 +49,7 @@ class KeluargaController extends Controller
 
         $keluarga = Keluarga::create($validated);
 
-        return $this->created(['data' => $keluarga]);
+        return $this->created(['keluarga' => $keluarga]);
     }
 
     /**
@@ -68,7 +68,7 @@ class KeluargaController extends Controller
         $keluarga->update($validated);
 
         return $this->created([
-            'data' => $keluarga
+            'keluarga' => $keluarga
         ]);
     }
 
