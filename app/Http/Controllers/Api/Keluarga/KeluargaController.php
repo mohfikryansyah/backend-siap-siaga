@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Keluarga;
 use App\Traits\ApiResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class KeluargaController extends Controller
 {
@@ -15,7 +16,15 @@ class KeluargaController extends Controller
      */
     public function index()
     {
-        $keluargas = Keluarga::latest()->get();
+        $user = Auth::user();
+
+        $keluargas = Keluarga::query()
+            // ->when(!$user->hasRole('admin'), function ($q) use ($user) {
+            //     $q->where('user_id', $user->id);
+            // })
+            ->where('user_id', $user->id)
+            ->latest()
+            ->get();
 
         return $this->success([
             'keluarga' => $keluargas
