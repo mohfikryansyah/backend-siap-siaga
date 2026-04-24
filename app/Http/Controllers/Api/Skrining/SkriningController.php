@@ -26,7 +26,7 @@ class SkriningController extends Controller
             // ->when(!$user->hasRole('admin'), function ($q) use ($user) {
             //     $q->where('user_id', $user->id);
             // })
-            ->where('user_id', $user->id)
+            ->where('keluarga_id', $user->id)
             ->latest()
             ->get();
 
