@@ -17,4 +17,9 @@ class Skrining extends Model
     {
         return $this->belongsTo(Keluarga::class);
     }
+    
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }
