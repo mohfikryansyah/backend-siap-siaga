@@ -48,6 +48,10 @@ class SkriningController extends Controller
             'skor' => 'required|numeric',
         ]);
 
+        $user = $request->user();
+        
+        $validatedData['user_id'] = $user->id;
+
         $keluarga = Skrining::create($validatedData);
 
         return $this->created($keluarga, 'Berhasil menambahkan data');
