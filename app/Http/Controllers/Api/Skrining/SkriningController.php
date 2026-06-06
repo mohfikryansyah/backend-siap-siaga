@@ -46,6 +46,7 @@ class SkriningController extends Controller
         $validatedData = $request->validate([
             'keluarga_id' => 'required|exists:keluargas,id',
             'skor' => 'required|numeric',
+            'tanda_bahaya' => 'required|boolean',
         ]);
 
         $user = $request->user();
@@ -62,9 +63,10 @@ class SkriningController extends Controller
         $validatedData = $request->validate([
             'keluarga_id' => 'required|exists:keluargas,id',
             'skor' => 'required|numeric',
+            'tanda_bahaya' => 'required|boolean',
         ]);
 
-        $keluargaUpdate = $skrining($validatedData);
+        $keluargaUpdate = $skrining->update($validatedData);
 
         return $this->created($keluargaUpdate, 'Berhasil mengubah data.');
     }
