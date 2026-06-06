@@ -38,7 +38,7 @@ class SkriningController extends Controller
      */
     public function show(Skrining $skrining): JsonResponse
     {
-        return $this->success(['skrining' => $skrining]);
+        return $this->success(['skrining' => $skrining->load('keluarga')], 'Berhasil ambil data keluarga');
     }
 
     public function store(Request $request): JsonResponse
