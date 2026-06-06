@@ -13,6 +13,10 @@ class Skrining extends Model
     /** @use HasFactory<\Database\Factories\SkriningFactory> */
     use HasFactory;
 
+    protected $casts = [
+        'tanda_bahaya' => 'boolean',
+    ];
+
     public function keluarga(): BelongsTo
     {
         return $this->belongsTo(Keluarga::class);
