@@ -19,5 +19,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Admin Siaga Jiwa',
             'email' => 'admin@gmail.com',
         ]);
+
+        $this->call(SimulasiKasusSeeder::class);
     }
 }
