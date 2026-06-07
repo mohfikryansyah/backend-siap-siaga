@@ -4,6 +4,8 @@ use App\Http\Controllers\Api\Auth\AuthController;
 use App\Http\Controllers\Api\Keluarga\KeluargaController;
 use App\Http\Controllers\Api\ProgressMateri\ProgressMateriController;
 use App\Http\Controllers\Api\Skrining\SkriningController;
+use App\Http\Controllers\MonitoringController;
+use App\Http\Controllers\SimulasiKasusController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')->group(function () {
@@ -31,5 +33,10 @@ Route::prefix('v1')->group(function () {
         Route::apiResource('keluarga', KeluargaController::class);
         Route::apiResource('skrining', SkriningController::class);
         // Route::post('keluarga', [KeluargaController::class, 'store']);
+
+        Route::get('/simulasi-kasus', [SimulasiKasusController::class, 'index']);
+        
+        Route::get('/monitoring', [MonitoringController::class, 'index']);
+        Route::post('/monitoring', [MonitoringController::class, 'store']);
     });
 });
