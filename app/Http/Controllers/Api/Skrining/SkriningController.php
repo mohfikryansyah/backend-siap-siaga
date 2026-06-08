@@ -23,10 +23,10 @@ class SkriningController extends Controller
 
         $skrinings = Skrining::query()
             ->with('keluarga')
-            ->when(!$user->hasRole('admin'), function ($q) use ($user) {
-                $q->where('user_id', $user->id);
-            })
-            // ->where('user_id', $user->id)
+            // ->when(!$user->hasRole('admin'), function ($q) use ($user) {
+            //     $q->where('user_id', $user->id);
+            // })
+            ->where('user_id', $user->id)
             ->latest()
             ->get();
 
