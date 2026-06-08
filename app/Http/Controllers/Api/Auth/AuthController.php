@@ -93,4 +93,31 @@ class AuthController extends Controller
 
         return $this->success(null, 'Logout dari semua device berhasil.');
     }
+
+    /**
+     * Ganti password user yang sedang login.
+     */
+    public function changePassword(Request $request): JsonResponse
+    {
+        $request->validate([
+            'current_password'      => ['required', 'string'],
+            'new_password'          => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+ 
+        /** @var User $user */
+        $user = $request->user();
+ 
+        if (! Hash::check($request->current_password, $user->password)) {
+            return $this->error('Password saat ini salah.', null, 422);
+        }
+ 
+        $user->update([
+            'password' => Hash::make($request->new_password),
+        ]);
+ 
+        // Hapus semua token lama kecuali yang sedang dipakai (opsional)
+        // $user->tokens()->where('id', '!=', $request->user()->currentAccessToken()->id)->delete();
+ 
+        return $this->success(null, 'Password berhasil diperbarui.');
+    }
 }
