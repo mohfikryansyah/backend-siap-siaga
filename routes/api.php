@@ -35,8 +35,13 @@ Route::prefix('v1')->group(function () {
         // Route::post('keluarga', [KeluargaController::class, 'store']);
 
         Route::get('/simulasi-kasus', [SimulasiKasusController::class, 'index']);
-        
-        Route::get('/monitoring', [MonitoringController::class, 'index']);
-        Route::post('/monitoring', [MonitoringController::class, 'store']);
+
+        Route::prefix('monitoring')->group(function () {
+            Route::get('/',         [MonitoringController::class, 'index']);
+            Route::post('/',        [MonitoringController::class, 'store']);
+            Route::get('/{id}',     [MonitoringController::class, 'show']);
+            Route::put('/{id}',     [MonitoringController::class, 'update']);
+            Route::delete('/{id}',  [MonitoringController::class, 'destroy']);
+        });
     });
 });
