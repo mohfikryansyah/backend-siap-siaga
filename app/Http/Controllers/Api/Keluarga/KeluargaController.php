@@ -52,7 +52,7 @@ class KeluargaController extends Controller
             'user_id' => 'required|exists:users,id',
             'nama_lengkap' => 'required|string|max:255',
             'usia' => 'required|string',
-            'pekerjaan' => 'required|string',
+            // 'pekerjaan' => 'required|string',
             'pendidikan_terakhir' => 'required|string',
         ]);
 
