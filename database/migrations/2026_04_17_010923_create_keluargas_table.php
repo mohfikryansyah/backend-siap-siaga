@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nama_lengkap');
             $table->string('usia');
             $table->enum('pendidikan_terakhir', ['SD', 'SMP', 'SMA', 'S1/Sederajat', 'S2', 'S3']);
-            $table->string('pekerjaan');
+            // $table->string('pekerjaan');
             $table->timestamps();
         });
     }
